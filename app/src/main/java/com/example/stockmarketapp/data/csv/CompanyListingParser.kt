@@ -6,6 +6,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.InputStream
 import java.io.InputStreamReader
+import java.util.Calendar
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -14,9 +15,11 @@ import javax.inject.Singleton
 class CompanyListingParser @Inject constructor(
 
 ) : CSVParser<CompanyListing> {
-    override suspend fun parse(stream: InputStream): List<CompanyListing> {
-        val csvReader = CSVReader(InputStreamReader(stream))
 
+    override suspend fun parse(stream: InputStream): List<CompanyListing> {
+
+
+        val csvReader = CSVReader(InputStreamReader(stream))
         return withContext(Dispatchers.IO) {
             csvReader.readAll().drop(1).mapNotNull { line ->
                     val symbol = line.getOrNull(0)

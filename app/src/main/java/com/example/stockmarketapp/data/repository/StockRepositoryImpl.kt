@@ -79,7 +79,16 @@ class StockRepositoryImpl @Inject constructor(
     override suspend fun getIntradayInfo(symbol: String): Resource<List<IntradayInfo>> {
         return try {
             val response=api.getIntradayInfo(symbol)
+            Log.d("StockRepositoryImpl","response: ${response.byteStream()}")
+            Log.d("StockRepositoryImpl", "✅ API call successful. Response type: ${response::class.java.simpleName}")
+
+            // Log basic info about the response
+            Log.d("StockRepositoryImpl", "Response Content Type: ${response.contentType()}")
+            Log.d("StockRepositoryImpl", "Response Content Length: ${response.contentLength()}")
+
+
             val result =intradayInfoParser.parse(response.byteStream())
+            Log.d("StockRepositoryImpl","result: ${result.size}")
             Resource.Success(result)
 
         } catch (e: IOException) {

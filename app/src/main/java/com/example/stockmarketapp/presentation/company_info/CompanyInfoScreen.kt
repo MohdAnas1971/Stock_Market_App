@@ -1,5 +1,6 @@
 package com.example.stockmarketapp.presentation.company_info
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -89,7 +90,10 @@ fun CompanyInfoScreen (
                     modifier = Modifier.fillMaxWidth(),
                 )
 
+                Log.d("CompanyInfoScreen","stockInfos: ${state.stockInfos.size}")
+
                 if (state.stockInfos.isNotEmpty()){
+                    Log.d("CompanyInfoScreen","stockInfos: ${state.stockInfos.size}")
                     Spacer(modifier = Modifier.height(16.dp))
                     Text("Market Summery")
                     Spacer(modifier = Modifier.height(32.dp))
