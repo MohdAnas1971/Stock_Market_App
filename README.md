@@ -4,7 +4,7 @@
 -->
 
 <p align="center">
- <img width="9690" height="2000" alt="stock_market_app_banner" src="https://github.com/user-attachments/assets/18b9983a-1c58-40e0-a82d-4eac77a904ee" />
+ <img width="9690" height="6000" alt="stock_market_app_banner" src="https://github.com/user-attachments/assets/18b9983a-1c58-40e0-a82d-4eac77a904ee" />
  <h1 align="center">Stock Market App</h1>
   <p align="center">
     A modern Stock Market Android application built with Kotlin, Jetpack Compose, and MVVM architecture.
